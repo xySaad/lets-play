@@ -243,19 +243,6 @@ Add a new error by adding a constant to `AppError` and throwing `AppError.X.asEx
 
 ---
 
-## Security Measures
-
-| Measure                        | How                                                                                                                                                                     |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Password hashing + salting     | `BCryptPasswordEncoder` (random salt per hash). Passwords are limited to 72 bytes, BCrypt's real limit                                                                  |
-| MongoDB injection              | typed DTOs (a JSON object sent where a string is expected is rejected with 400), Spring Data derived queries only (bound parameters, no query strings built from input) |
-| Input validation               | `@NotBlank`, `@NotNull`, `@Size`, `@Email`, `@Pattern`, `@DecimalMin/Max` on every DTO + `@Valid`; email trimmed and lower-cased                                        |
-| No sensitive data in responses | responses are dedicated records without `password`; entities are never serialized                                                                                       |
-| HTTPS                          | TLS on port 8443 (PKCS12 keystore); the session cookie is `Secure`, `HttpOnly`, `SameSite=Lax`                                                                          |
-| Strict access control          | every non-public endpoint declares `@Auth.User` / `@EntityAccess` / `@RequiresPermission`; the owner is always the logged-in user, never taken from the body            |
-| Privilege escalation           | self-registration always yields the `default` role; roles can only be set by root                                                                                       |
-| Secrets                        | JWT secret, DB password, root password, keystore password come from the environment; `.env` is git-ignored                                                              |
-
 ---
 
 ## Configuration & Environment

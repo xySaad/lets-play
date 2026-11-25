@@ -4,7 +4,7 @@
 cp jar.example.json jar.json
 run() {
   local f="$1"; shift
-  postman collection run "$f" -k --verbose --reporter-cli-no-summary \
+  npx postman-cli collection run "$f" -k --verbose --reporter-cli-no-summary \
     --cookie-jar jar.json --export-cookie-jar jar.json "$@"
 }
 ```

@@ -13,7 +13,8 @@ import com.z01.letsplay.model.User;
 @Component
 public class PermissionValidator implements PermissionProvider {
     private static final Map<String, Set<String>> ROLE_SCOPES = Map.of(
-            Role.ROOT, Set.of("v1:users:read", "v1:users:write"),
+            Role.ROOT,
+            Set.of("v1:users:list", "v1:users:read", "v1:users:create", "v1:users:update", "v1:users:delete"),
             Role.DEFAULT, Set.of());
 
     private final PrincipalProvider<User> principalProvider;
