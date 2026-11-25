@@ -1,0 +1,4 @@
+$kind: http-request
+name: 07-product-delete
+method: DELETE
+url: "https://localhost:8443/api/v1/products/{{productId}}"

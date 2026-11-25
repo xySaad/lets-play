@@ -1,0 +1,4 @@
+$kind: http-request
+name: 10-user-get
+method: GET
+url: "https://localhost:8443/api/v1/users/{{userId}}"

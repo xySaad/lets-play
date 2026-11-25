@@ -1,0 +1,14 @@
+$kind: http-request
+name: 06-product-update
+method: PUT
+url: "https://localhost:8443/api/v1/products/{{productId}}"
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Guitar v2",
+      "description": "6 strings",
+      "price": 149
+    }

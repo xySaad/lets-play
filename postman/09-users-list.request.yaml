@@ -1,0 +1,4 @@
+$kind: http-request
+name: 09-users-list
+method: GET
+url: "https://localhost:8443/api/v1/users"

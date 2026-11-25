@@ -1,0 +1,14 @@
+$kind: http-request
+name: 03-product-create
+method: POST
+url: "https://localhost:8443/api/v1/products"
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Guitar",
+      "description": "6 strings",
+      "price": 199.9
+    }

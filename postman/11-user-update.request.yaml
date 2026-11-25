@@ -1,0 +1,14 @@
+$kind: http-request
+name: 11-user-update
+method: PUT
+url: "https://localhost:8443/api/v1/users/{{userId}}"
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "carol2",
+      "email": "carol@test.dev",
+      "role": "default"
+    }

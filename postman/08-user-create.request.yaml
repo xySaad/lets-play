@@ -1,0 +1,15 @@
+$kind: http-request
+name: 08-user-create
+method: POST
+url: "https://localhost:8443/api/v1/users"
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "carol",
+      "email": "carol@test.dev",
+      "password": "correct-horse-1",
+      "role": "default"
+    }

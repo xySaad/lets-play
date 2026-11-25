@@ -1,0 +1,13 @@
+$kind: http-request
+name: 02-login
+method: POST
+url: "https://localhost:8443/api/v1/login"
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "email": "{{email}}",
+      "password": "{{password}}"
+    }

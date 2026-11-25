@@ -1,0 +1,6 @@
+*.env
+*.env.*
+!.env.example
+target/
+certs/
+postman/jar.json

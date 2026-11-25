@@ -1,0 +1,14 @@
+$kind: http-request
+name: 01-register
+method: POST
+url: "https://localhost:8443/api/v1/register"
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "jhon",
+      "email": "jhon@doe.dev",
+      "password": "random-bullshit-123"
+    }
